@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Body from './components/Body';
+import Footer from './components/Footer';
+import MyHeader from './components/Header';
+// ** import
+// => 컴포넌트는 MyComp from real_File_path; 
+//    내부 코드에서 MyComp 이름으로 인식
+
 
 function App() {
+  // 실습 : 객체를 정의하고 컴포넌트로 전달하여 출력하기
+  // Test1) Header 로 전달
+  const bestDress ={
+    color : 'Red',
+    style : 'long',
+    price : 99000,
+    size : ['small', 'medium', 'large']
+  }
+  
+  // Test2) Body 로 전달
+  const name = "GreenComputer";
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MyHeader className="App-header" bestDress={bestDress} />
+      <Body name={name} country={'경기도 성남시'}/>
+      <Footer />
     </div>
   );
 }
